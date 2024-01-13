@@ -1,0 +1,18 @@
+<p>users works!</p>
+
+{{ userService.users() }}
+<ul>
+  @for (user of userService.users(); track user.id){
+
+  <li>
+    <img
+    [srcset]="user.avatar"
+    >
+  {{user.email}}
+  <p>
+      <a [routerLink]="['/user', user.id]">{{user.first_name}}</a>
+
+  </p>
+  </li>
+  }
+</ul>
